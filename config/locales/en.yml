@@ -1,0 +1,71 @@
+en:
+  layouts:
+    header:
+      login: "Log in"
+      users: "Users"
+      categories: "Categories"
+      products: "Products"
+      order: "Orders"
+      logout: "Log out"
+      account: "Account"
+      profile: "Profile"
+      setting: "Setting"
+      signup: "Sign up"
+      logo_alt: "Foods and Drinks logo"
+      product_suggests: "Product suggest"
+    footer:
+      name: "Project Foods and drinks"
+    base_title: "Foods and drinks"
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me on this computer"
+  flash:
+    invalid_login: "Invalid email/password combination"
+    wrong_email: "Email address not found"
+    must_logged_in: "Please log in."
+    edit_user_success: "Edit user success."
+    add_user_success: "Add user success."
+    update_user_success: "User updated."
+    delete_user: "User deleted."
+    user_not_found: "User not found."
+    cant_delete: "Can't delete."
+  shared:
+    error_messages:
+      form_contain: "The form contains"
+      error: "error"
+  users:
+    index:
+      title: "User management"
+      add_user: "Add user"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      role: "Role"
+      status: "Status"
+    user:
+      admin: "admin"
+      customer: "customer"
+      activated: "activated"
+      not_activate: "not activate"
+      edit: "Edit"
+      delete: "Delete"
+    new:
+      title: "Add user"
+      admin: "Admin"
+      customer: "Customer"
+      password: "Password"
+      password_confirmation: "Confirmation"
+    edit:
+      title: "Update user"
+    search_form:
+      search: "Search"
+      placeholder_user: "Enter name"
+  data:
+    confirm: "Are you sure?"
+  time:
+    zone: 7
+    formats:
+      default: "%d/%m/%Y %H:%M"
