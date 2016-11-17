@@ -5,7 +5,7 @@ module SessionsHelper
 
   def current_admin
     if admin_id = session[:admin_id]
-      @current_user ||= Admin.find_by id: admin_id
+      @current_admin ||= Admin.find_by id: admin_id
     elsif admin_id = cookies.signed[:admin_id]
       admin = Admin.find_by id: admin_id
       if admin && admin.authenticated?(:remember, cookies[:remember_token])
@@ -28,9 +28,9 @@ module SessionsHelper
   end
 
   def log_out
-    forget current_user
-    session.delete :user_id
-    @current_user = nil
+    forget current_admin
+    session.delete :admin_id
+    @current_admin = nil
   end
 
   def logged_in?

@@ -1,14 +1,12 @@
 <tr>
+  <td><%= user.helmet_id %></td>
   <td><%= user.name %></td>
   <td><%= user.email %></td>
   <td><%= user.phone %></td>
   <td><%= user.gender %></td>
   <td><%= user.blood_group %></td>
+  <td><%= user.phone_emergency %></td>
   <td>
     <%= link_to t(".edit"), edit_user_path(user), class: "btn btn-info" %>
-  </td>
-  <td>
-    <%= link_to t("delete"), user_path(user), class: "btn btn-danger",
-      method: :delete, data: {confirm: t("data.confirm")} %>
   </td>
 </tr>

@@ -1,0 +1,16 @@
+<tr>
+  <td><%= accident.user.helmet_id %></td>
+  <td><%= accident.user.name %></td>
+  <td><%= accident.user.phone %></td>
+  <td><%= accident.user.gender %></td>
+  <td><%= l accident.created_at.in_time_zone(t "time.zone") %></td>
+  <td><%= accident.status %></td>
+
+  <td>
+    <%= link_to t("accident.index.detail"), accident_path(accident), class: "btn btn-info" %>
+  </td>
+  <td>
+    <%= link_to t("accident.index.delete"), accident_path(accident), class: "btn btn-danger",
+      method: :delete, data: {confirm: t("data.confirm")} %>
+  </td>
+</tr>

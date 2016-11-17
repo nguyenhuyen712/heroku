@@ -4,6 +4,7 @@ class CreateAccidents < ActiveRecord::Migration[5.0]
       t.float :lati
       t.float :longti
       t.integer :status, default: false
+      t.string :description
       t.references :user, foreign_key: true
 
       t.timestamps

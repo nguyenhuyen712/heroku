@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20161115021525) do
 
   create_table "accidents", force: :cascade do |t|
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "lati"
+    t.float    "longti"
     t.integer  "status",     default: 0
     t.integer  "user_id"
     t.datetime "created_at",             null: false
@@ -37,10 +37,12 @@ ActiveRecord::Schema.define(version: 20161115021525) do
     t.string   "email"
     t.integer  "gender"
     t.string   "blood_group"
+    t.string   "helmet_id"
+    t.string   "phone_emergency"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["phone"], name: "index_users_on_phone", unique: true
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["helmet_id"], name: "index_users_on_helmet_id", unique: true
   end
 
 end
