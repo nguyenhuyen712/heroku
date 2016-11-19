@@ -8,20 +8,13 @@ class AccidentsController < ApplicationController
   end
 
   def new
-    @accident_waiting = Accident.waiting.user_exist(@user.id).first
-    @accident_processing = Accident.processing.user_exist(@user.id).first
-
-    if (@accident_waiting.blank?&&@accident_processing.blank?)
+    @accident = Accident.waiting_or_processing.user_exist(@user.id).first
+    if (@accident.blank?)
       @accident = Accident.new accident_params
       if @accident.save
         redirect_to map_path
       end
     else
-      if (@accident_waiting.blank?)
-        @accident = @accident_processing
-      else
-        @accident = @accident_waiting
-      end
       if @accident.update_attributes accident_params
         redirect_to map_path
       end
