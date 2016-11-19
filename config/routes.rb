@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/map", to: "maps#index"
 
-  resources :users
-  resources :accidents
+  resources :users, except: [:destroy]
+  resources :accidents, except: [:create, :update, :destroy]
 end

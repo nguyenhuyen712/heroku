@@ -1,19 +1,19 @@
-<table class="table table-responsive receiver_infomation">
-  <tr>
-    <th><%= t "accidents.index.accident_time" %></th>
-    <td><%= l @accident.created_at.in_time_zone(t "time.zone") %></td>
-  </tr>
-   <%= form_tag edit_accident_path(@accident), method: :get do %>
-   <tr>
-    <th><%= label_tag t("accidents.index.status") %></th>
-    <td><%= select_tag :status, options_for_select(@accidents, @accident.status),
-        class: "form-control" %></td>
-  </tr>
-  <tr>
-    <th><%= label_tag t("accidents.index.description") %></th>
-    <td><%= text_area_tag :description, nil ,class: "form-control" %>
-      <%= submit_tag "Update", class: "btn btn-primary" %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<%= form_tag edit_accident_path(@accident), method: :get do %>
+  <table class="table table-responsive receiver_infomation">
+    <tr>
+      <th><%= t "accidents.index.accident_time" %></th>
+      <td><%= l @accident.created_at.in_time_zone(t "time.zone") %></td>
+    </tr>
+     <tr>
+      <th><%= label_tag t("accidents.index.status") %></th>
+      <td><%= select_tag :status, options_for_select(@accidents, @accident.status),
+          class: "form-control" %></td>
+    </tr>
+    <tr>
+      <th><%= label_tag t("accidents.index.description") %></th>
+      <td><%= text_area_tag :description, @accident.description ,class: "form-control" %>
+        <%= submit_tag "Update", class: "btn btn-primary" %>
+      </td>
+    </tr>
+  </table>
+<% end %>

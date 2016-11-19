@@ -3,4 +3,5 @@
 <%= t "accidents.index.gender" %>: <%= accident.user.gender %></br>
 <%= t "accidents.index.accident_time" %>:
   <%= l accident.created_at.in_time_zone(t "time.zone") %></br>
+<%= t "accidents.index.status" %>: <%= accident.status %></br>
 <%= link_to t("accidents.index.detail"), accident_path(accident) %>
