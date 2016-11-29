@@ -4,22 +4,24 @@
     <title><%= full_title yield :title %></title>
     <%= render "layouts/rails_default" %>
   </head>
-  <body>
     <% if logged_in? %>
-      <%= render "layouts/header" %>
-      <div class="container no-margin-top">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
-        <% end %>
-        <%= yield %>
-      </div>
+      <body>
+        <%= render "layouts/header" %>
+        <div class="container no-margin-top">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </body>
     <% else %>
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
-        <% end %>
-        <%= yield %>
-      </div>
+      <body class="login">
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </body>
     <% end %>
-  </body>
 </html>
